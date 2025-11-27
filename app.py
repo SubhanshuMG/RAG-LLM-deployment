@@ -30,9 +30,10 @@ st.markdown("""
     /* Import Google Font */
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
     
-    /* Global Styles */
+    /* Global Styles - Dark Theme */
     .stApp {
         font-family: 'Inter', sans-serif;
+        background: linear-gradient(180deg, #0d0d1a 0%, #1a1a2e 100%);
     }
     
     /* Main container */
@@ -40,6 +41,15 @@ st.markdown("""
         padding-top: 2rem;
         padding-bottom: 2rem;
         max-width: 1200px;
+    }
+    
+    /* Global text color */
+    .stMarkdown, .stMarkdown p, .stMarkdown li {
+        color: #e0e0e0;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        color: #ffffff !important;
     }
     
     /* Header Styling */
@@ -93,45 +103,70 @@ st.markdown("""
         background: rgba(102, 126, 234, 0.1);
     }
     
-    /* Chat container */
+    /* Chat container - Dark Theme */
     .chat-container {
-        background: #ffffff;
+        background: #1a1a2e;
         border-radius: 16px;
         padding: 1.5rem;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
         margin-bottom: 1rem;
     }
     
-    /* Chat messages */
+    /* Chat messages - Dark Theme */
     .stChatMessage {
-        background: #f8f9fa;
-        border-radius: 12px;
-        padding: 1rem;
-        margin-bottom: 0.5rem;
+        background: #1e1e2e !important;
+        border-radius: 16px !important;
+        padding: 1.2rem !important;
+        margin-bottom: 1rem !important;
+        border: 1px solid #3d3d5c !important;
     }
     
     [data-testid="stChatMessageContent"] {
         font-size: 1rem;
-        line-height: 1.6;
+        line-height: 1.7;
+        color: #e0e0e0 !important;
     }
     
-    /* User message */
-    .stChatMessage[data-testid="user-message"] {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    [data-testid="stChatMessageContent"] p {
+        color: #e0e0e0 !important;
     }
     
-    /* Source card styling */
+    /* User message styling */
+    [data-testid="stChatMessage"]:has([data-testid="stChatMessageAvatarUser"]) {
+        background: linear-gradient(135deg, #4a4a6a 0%, #3d3d5c 100%) !important;
+        border: 1px solid #667eea !important;
+    }
+    
+    /* Assistant message styling */
+    [data-testid="stChatMessage"]:has([data-testid="stChatMessageAvatarAssistant"]) {
+        background: linear-gradient(135deg, #1e1e2e 0%, #2a2a3e 100%) !important;
+        border: 1px solid #3d3d5c !important;
+    }
+    
+    /* Avatar containers */
+    [data-testid="stChatMessageAvatarUser"],
+    [data-testid="stChatMessageAvatarAssistant"] {
+        background: #2a2a3e !important;
+        border-radius: 8px !important;
+    }
+    
+    /* Source card styling - Dark Theme */
     .source-card {
-        background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+        background: linear-gradient(135deg, #2a2a3e 0%, #1e1e2e 100%);
         border-left: 4px solid #667eea;
         padding: 1rem;
-        border-radius: 0 8px 8px 0;
+        border-radius: 0 12px 12px 0;
         margin: 0.5rem 0;
         font-size: 0.9rem;
+        color: #c0c0c0;
     }
     
     .source-card strong {
         color: #667eea;
+    }
+    
+    .source-card small {
+        color: #a0a0a0;
     }
     
     /* Button styling */
@@ -150,25 +185,40 @@ st.markdown("""
         box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
     }
     
-    /* Info box styling */
+    /* Info box styling - Dark Theme */
     .info-box {
-        background: linear-gradient(135deg, #263238 0%, #37474f 100%);
+        background: linear-gradient(135deg, #1a3a4a 0%, #0d2836 100%);
         border-radius: 12px;
         padding: 1.5rem;
         margin: 1rem 0;
         border-left: 4px solid #00bcd4;
+        color: #b0e0e6;
     }
     
-    /* Success box */
+    .info-box h4 {
+        color: #00e5ff;
+        margin-bottom: 0.5rem;
+    }
+    
+    .info-box p {
+        color: #b0e0e6;
+    }
+    
+    .info-box a {
+        color: #667eea;
+    }
+    
+    /* Success box - Dark Theme */
     .success-box {
-        background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+        background: linear-gradient(135deg, #1a3a2a 0%, #0d2818 100%);
         border-radius: 12px;
         padding: 1.5rem;
         margin: 1rem 0;
         border-left: 4px solid #4caf50;
+        color: #a8e6cf;
     }
     
-    /* Stats cards */
+    /* Stats cards - Dark Theme */
     .stats-container {
         display: flex;
         gap: 1rem;
@@ -176,12 +226,13 @@ st.markdown("""
     }
     
     .stat-card {
-        background: white;
+        background: linear-gradient(135deg, #1e1e2e 0%, #2a2a3e 100%);
         border-radius: 12px;
         padding: 1rem 1.5rem;
         text-align: center;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
         flex: 1;
+        border: 1px solid #3d3d5c;
     }
     
     .stat-number {
@@ -192,10 +243,10 @@ st.markdown("""
     
     .stat-label {
         font-size: 0.9rem;
-        color: #666;
+        color: #a0a0a0;
     }
     
-    /* Feature cards */
+    /* Feature cards - Dark Theme */
     .feature-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -204,17 +255,19 @@ st.markdown("""
     }
     
     .feature-card {
-        background: black;
+        background: linear-gradient(135deg, #1e1e2e 0%, #2a2a3e 100%);
         border-radius: 12px;
         padding: 1.5rem;
         text-align: center;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
         transition: all 0.3s ease;
+        border: 1px solid #3d3d5c;
     }
     
     .feature-card:hover {
         transform: translateY(-5px);
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        box-shadow: 0 8px 30px rgba(102, 126, 234, 0.3);
+        border-color: #667eea;
     }
     
     .feature-icon {
@@ -224,35 +277,73 @@ st.markdown("""
     
     .feature-title {
         font-weight: 600;
-        color: #333;
+        color: #e0e0e0;
         margin-bottom: 0.5rem;
     }
     
     .feature-desc {
         font-size: 0.85rem;
-        color: #666;
+        color: #a0a0a0;
     }
     
-    /* Chat input styling */
+    /* Chat input styling - Dark Theme */
     .stChatInput {
         border-radius: 12px;
     }
     
     .stChatInput > div {
-        border-radius: 12px;
-        border: 2px solid #e0e0e0;
+        border-radius: 12px !important;
+        border: 2px solid #3d3d5c !important;
+        background: #1e1e2e !important;
     }
     
     .stChatInput > div:focus-within {
-        border-color: #667eea;
-        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+        border-color: #667eea !important;
+        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.3) !important;
     }
     
-    /* Divider */
+    .stChatInput textarea {
+        color: #e0e0e0 !important;
+        background: transparent !important;
+    }
+    
+    .stChatInput textarea::placeholder {
+        color: #808080 !important;
+    }
+    
+    /* Divider - Dark Theme */
     .custom-divider {
         height: 2px;
         background: linear-gradient(90deg, transparent, #667eea, transparent);
         margin: 2rem 0;
+    }
+    
+    /* Expander styling - Dark Theme */
+    .streamlit-expanderHeader {
+        background: #2a2a3e !important;
+        border-radius: 8px !important;
+        color: #e0e0e0 !important;
+    }
+    
+    .streamlit-expanderContent {
+        background: #1e1e2e !important;
+        border: 1px solid #3d3d5c !important;
+        border-top: none !important;
+        border-radius: 0 0 8px 8px !important;
+    }
+    
+    [data-testid="stExpander"] {
+        background: transparent !important;
+        border: 1px solid #3d3d5c !important;
+        border-radius: 8px !important;
+    }
+    
+    [data-testid="stExpander"] summary {
+        color: #a0a0a0 !important;
+    }
+    
+    [data-testid="stExpander"] summary:hover {
+        color: #667eea !important;
     }
     
     /* Spinner */
@@ -285,8 +376,8 @@ st.markdown("""
 st.markdown("""
 <div class="main-header">
     <h1>[AI Research Assistant]</h1>
-    <p>Upload research papers and get intelligent answers with source citations</p>
-    <b>by Subhanshu Mohan Gupta</b>
+    <p>Upload research papers and get intelligent answers with source citations
+    <b><h3>by Subhanshu Mohan Gupta</b></h3></p>
 </div>
 """, unsafe_allow_html=True)
 
