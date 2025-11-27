@@ -377,7 +377,7 @@ st.markdown("""
 <div class="main-header">
     <h1>[AI Research Assistant]</h1>
     <p>Upload research papers and get intelligent answers with source citations
-    <b><h3>by Subhanshu Mohan Gupta</b></h3></p>
+    <b><h4><i>by</i> Subhanshu Mohan Gupta</h4></b></p>
 </div>
 """, unsafe_allow_html=True)
 
