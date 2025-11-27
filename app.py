@@ -152,7 +152,7 @@ st.markdown("""
     
     /* Info box styling */
     .info-box {
-        background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
+        background: linear-gradient(135deg, #263238 0%, #37474f 100%);
         border-radius: 12px;
         padding: 1.5rem;
         margin: 1rem 0;
@@ -176,7 +176,7 @@ st.markdown("""
     }
     
     .stat-card {
-        background: white;
+        background: black;
         border-radius: 12px;
         padding: 1rem 1.5rem;
         text-align: center;
@@ -284,8 +284,9 @@ st.markdown("""
 # --- Header ---
 st.markdown("""
 <div class="main-header">
-    <h1>🧠 AI Research Assistant</h1>
+    <h1>[AI Research Assistant]</h1>
     <p>Upload research papers and get intelligent answers with source citations</p>
+    <br><b>by Subhanshu Mohan Gupta</b>
 </div>
 """, unsafe_allow_html=True)
 
