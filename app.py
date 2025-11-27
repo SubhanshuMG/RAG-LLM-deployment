@@ -176,7 +176,7 @@ st.markdown("""
     }
     
     .stat-card {
-        background: black;
+        background: white;
         border-radius: 12px;
         padding: 1rem 1.5rem;
         text-align: center;
@@ -204,7 +204,7 @@ st.markdown("""
     }
     
     .feature-card {
-        background: white;
+        background: black;
         border-radius: 12px;
         padding: 1.5rem;
         text-align: center;
@@ -286,7 +286,7 @@ st.markdown("""
 <div class="main-header">
     <h1>[AI Research Assistant]</h1>
     <p>Upload research papers and get intelligent answers with source citations</p>
-    <br><b>by Subhanshu Mohan Gupta</b>
+    <b>by Subhanshu Mohan Gupta</b>
 </div>
 """, unsafe_allow_html=True)
 
